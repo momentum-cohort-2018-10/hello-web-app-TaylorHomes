@@ -20,6 +20,14 @@ from collection import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('about/',TemplateView.as_view(template_name='about.html'),name='about'),
-    path('contact/',TemplateView.as_view(template_name='contact.html'),name='contact'),
-    path('admin/', admin.site.urls), ]
+    path(
+        'about/',
+        TemplateView.as_view(template_name='about.html'),
+        name='about'),
+    path(
+        'contact/',
+        TemplateView.as_view(template_name='contact.html'),
+        name='contact'),
+    path('villains/<slug>/', views.villain_detail, name='villain_detail'),
+    path('admin/', admin.site.urls),
+]
