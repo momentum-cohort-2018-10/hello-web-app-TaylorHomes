@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from collection.models import Villians
+from collection.models import Villain
 
 
-class VillainsAdmin(admin.ModelAdmin):
-    model = Villians
+class VillainAdmin(admin.ModelAdmin):
+    model = Villain
     list_display = (
         'name',
         'description',
@@ -12,6 +12,4 @@ class VillainsAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
 
 
-admin.site.register(Villians, VillainsAdmin)
-
-# Register your models here.
+admin.site.register(Villain, VillainAdmin)
