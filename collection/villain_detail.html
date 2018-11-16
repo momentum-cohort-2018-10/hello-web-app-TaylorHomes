@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ villain.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h1>{{ villain.name }}</h1>
+<p>{{ villain.description }}</p>
+<a href="{% url 'edit_villain' slug=villain.slug %}">
+    Edit me!
+</a>
+{% endblock content %}

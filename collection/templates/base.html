@@ -5,22 +5,76 @@
 <head>
        <title>
               {% block title %}
-              My Hello Web App Project {% endblock title %}
+              Legion of Doom{% endblock title %}
        </title>
-       <link rel="stylesheet" href="{% static 'css/style.css' %}" /> {% block header %}{% endblock header %}
+       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+       <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+
+       {% block header %}{% endblock header %}
 </head>
 
 <body>
+
        <header>
-              <h1>Hello Web App</h1>
+              <h1 class="t1">Secret Society of Super Villains</h1>
+              <h2 class="t2">Access restricted to those with malicious intent.</h2>
+
+
+              <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+                     <div class="tc">
+                            <img src="https://vignette.wikia.nocookie.net/villains/images/b/ba/Green-Goblin-Norman-Osborn-Marvel-Comics-Spider-Man-h167.jpg/revision/latest?cb=20161119141455"
+                                   class="br-100 h4 w4 dib ba b--black-05 pa2" title="Pointy Ears">
+                            <h1 class="f3 mb2">Green Goblin</h1>
+                            <h2 class="f5 fw4 gray mt0">CPT (Chief Pumpkin Tosser)</h2>
+                     </div>
+              </article>
+
+
+              <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+                     <div class="tc">
+                            <img src="http://pm1.narvii.com/5817/ca13e05d22ba875652fb1c2eafefcbdbc457cb3e_00.jpg" class="br-100 h4 w4 dib ba b--black-05 pa2"
+                                   title="Baldy">
+                            <h1 class="f3 mb2">Lex Luthor</h1>
+                            <h2 class="f5 fw4 gray mt0">Hates Reporters</h2>
+                     </div>
+              </article>
+
+              <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+                     <div class="tc">
+                            <img src="https://i.kinja-img.com/gawker-media/image/upload/s--qBvJrrAs--/c_scale,f_auto,fl_progressive,q_80,w_800/tb3valnfpsnxqxdbdtol.png"
+                                   class="br-100 h4 w4 dib ba b--black-05 pa2" title="Purple Chin">
+                            <h1 class="f3 mb2">Thanos</h1>
+                            <h2 class="f5 fw4 gray mt0">Sweet Gauntlet</h2>
+                     </div>
+              </article>
+
               <nav>
                      <ul>
-                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="
+              {% url 'home' %}">Home</a></li>
                             <li><a href="{% url 'about' %}">About</a></li>
                             <li><a href="{% url 'contact' %}">Contact</a></li>
                      </ul>
               </nav>
        </header>
+
+       <!-- <h3> Green Goblin</h3>
+       <img src="https://vignette.wikia.nocookie.net/villains/images/b/ba/Green-Goblin-Norman-Osborn-Marvel-Comics-Spider-Man-h167.jpg/revision/latest?cb=20161119141455"
+              alt="Green Goblin">
+       <p> Pointy ears. Exploding pumpkins. Sweet glider.</p> -->
+
+
+       <!-- <h3> Lex Luthor</h3>
+       <img src="http://pm1.narvii.com/5817/ca13e05d22ba875652fb1c2eafefcbdbc457cb3e_00.jpg" alt="Lex Luthor">
+       <p> Bald. Evil. Really quite smart. </p>
+
+
+       <h3> Thanos </h3>
+       <img src="https://i.kinja-img.com/gawker-media/image/upload/s--qBvJrrAs--/c_scale,f_auto,fl_progressive,q_80,w_800/tb3valnfpsnxqxdbdtol.png"
+              alt="Thanos">
+       <p> Don't let this dude snap his fingers.</p> -->
+
+
        {% block content %}{% endblock content %}
        {% block footer %}{% endblock footer %}
 </body>
