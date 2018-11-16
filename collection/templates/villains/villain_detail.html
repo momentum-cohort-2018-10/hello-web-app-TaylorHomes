@@ -5,8 +5,8 @@ Homepage - {{ block.super }}
 
 
 {% block content %}
-{% for villain in villains %}
+
 <h2>{{ villain.name }}</h2>
 <p>{{ villain.description }}</p>
-{% endfor %}
+
 {% endblock content %}
