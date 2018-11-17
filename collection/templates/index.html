@@ -2,7 +2,7 @@
 {% block title %}
 Homepage - {{ block.super }}
 {% endblock title %}
- 
+
 {% block content %}
 {% for villain in villains %}
 <h2><a href="{% url 'villain_detail' slug=villain.slug %}">
