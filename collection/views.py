@@ -20,7 +20,6 @@ def villain_detail(request, slug):
 def edit_villain(request, slug):
 
     villain = Villain.objects.get(slug=slug)
-    # breakpoint()
     form_class = VillainForm
     if request.method == 'POST':
         form = form_class(data=request.POST, instance=villain)
