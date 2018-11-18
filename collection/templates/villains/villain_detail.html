@@ -9,4 +9,9 @@ Homepage - {{ block.super }}
 <h2>{{ villain.name }}</h2>
 <p>{{ villain.description }}</p>
 
+{% if user == villain.user %} <p>
+    <a href="{% url 'edit_villain' slug=villain.slug %}"> Edit me!
+    </a> </p>
+{% endif %}
+
 {% endblock content %}
