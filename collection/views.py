@@ -20,6 +20,18 @@ def villain_detail(request, slug):
     })
 
 
+def browse_by_name(request, initial=None):
+    if initial:
+        villains = Villain.objects.filter(
+            name__istartswith=initial).order_by('name')
+    else:
+        villains = Villain.objects.all().order_by('name')
+    return render(request, 'search/search.html', {
+        'villains': villains,
+        'initial': initial,
+    })
+
+
 @login_required
 def edit_villain(request, slug):
 

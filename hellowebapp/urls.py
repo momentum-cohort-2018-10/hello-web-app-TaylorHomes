@@ -36,12 +36,15 @@ urlpatterns = [
         'contact/',
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
-    path('villain/', RedirectView.as_view(
-        pattern_name='browse', permanent=True)),
-    path('villain/<slug>/', views.villain_detail, name='villain_detail'),
-    path('villain/<slug>/edit/', views.edit_villain, name='edit_villain'),
+    path('villains/',
+         RedirectView.as_view(pattern_name='browse', permanent=True)),
+    path('villains/<slug>/', views.villain_detail, name='villain_detail'),
+    path('villains/<slug>/edit/', views.edit_villain, name='edit_villain'),
     path('browse/', RedirectView.as_view(
         pattern_name='browse', permanent=True)),
+    path('browse/name/', views.browse_by_name, name='browse'),
+    path(
+        'browse/name/<initial>/', views.browse_by_name, name='browse_by_name'),
     path(
         'accounts/password/reset/',
         PasswordResetView.as_view(
